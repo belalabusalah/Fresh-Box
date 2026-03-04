@@ -1,9 +1,12 @@
-
 import 'package:flutter/material.dart';
 import 'package:fresh_box/view/screen/CartScreen.dart';
 import 'package:fresh_box/view/screen/PopularFoodScreen.dart';
 
-void main (){runApp(MyApp());}
+import 'view/screen/auth screen/login.dart';
+
+void main() {
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -12,7 +15,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: CartScreen(),
+      home: Login(),
+      // home: CartScreen(),
       // home: PopularFoodScreen(),
     );
   }
