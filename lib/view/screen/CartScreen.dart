@@ -316,6 +316,8 @@ class CartScreen extends StatelessWidget {
               ],
             ),
             GlobalButton(
+              marginTop: 50,
+              marginBottom: 30,
               color: Colors.redAccent,
               onTap: () {},
               title: Text(

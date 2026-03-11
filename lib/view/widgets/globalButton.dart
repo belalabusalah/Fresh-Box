@@ -4,7 +4,11 @@ class GlobalButton extends StatelessWidget {
   final Function onTap;
   final Widget title;
   final Color color;
+  final double? marginTop;
+  final double? marginBottom;
   const GlobalButton({
+    required this.marginTop,
+    required this.marginBottom,
     required this.color,
     required this.title,
     required this.onTap,
@@ -17,7 +21,7 @@ class GlobalButton extends StatelessWidget {
       onTap: onTap(),
       child: Container(
         alignment: Alignment.center,
-        margin: EdgeInsets.only(top: 50, bottom: 30),
+         margin: EdgeInsets.only(top: marginTop!, bottom: marginBottom!),
         height: 50,
         width: double.infinity,
         decoration: BoxDecoration(
