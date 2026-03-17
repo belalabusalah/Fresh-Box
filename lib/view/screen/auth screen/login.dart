@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fresh_box/view/widgets/authWidget/Auth%20Continue%20With.dart';
 import 'package:fresh_box/view/widgets/authWidget/LabelText.dart';
+import 'package:fresh_box/view/widgets/authWidget/SupTitle.dart';
 import 'package:fresh_box/view/widgets/authWidget/TextFieldLogin.dart';
+import 'package:fresh_box/view/widgets/authWidget/titleAuth.dart';
 import 'package:fresh_box/view/widgets/globalButton.dart';
 
 class Login extends StatelessWidget {
@@ -25,34 +29,23 @@ class Login extends StatelessWidget {
       body: Padding(
         padding: EdgeInsets.all(25),
         child: SingleChildScrollView(
-
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                "Let’s Sign You In",
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),
-              ),
-              Text(
-                "Welcome back, you’ve been missed!",
-                style: TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.w400,
-                  color: Colors.black54,
-                ),
-              ),
+              TitleAuth(text: "Let’s Sign You In"),
+              SupTitle(text: "Welcome back, you’ve been missed!"),
               Container(
                 padding: EdgeInsets.only(top: 24, bottom: 12),
                 child: LabelText(text: "Username or E-mail"),
               ),
-              TextFieldLogin(
+              TextFieldAuth(
                 hint: LabelText(text: "Enter your username or E-mail"),
               ),
               Container(
                 padding: EdgeInsets.only(top: 24, bottom: 12),
                 child: LabelText(text: "Password"),
               ),
-              TextFieldLogin(
+              TextFieldAuth(
                 suffixIcon: IconButton(
                   onPressed: () {},
                   icon: Icon(Icons.visibility_off_outlined),
@@ -80,14 +73,7 @@ class Login extends StatelessWidget {
               GlobalButton(
                 marginTop: 35,
                 marginBottom: 14,
-                title: Text(
-                  "LogIn",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 22,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
+                title: "LogIn",
                 onTap: () {},
                 color: Colors.redAccent,
               ),
@@ -98,7 +84,7 @@ class Login extends StatelessWidget {
                     "Don’t have an account?",
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
-                      fontSize: 15,
+                      fontSize: 15.sp,
                       color: Colors.black87,
                     ),
                   ),
@@ -106,49 +92,29 @@ class Login extends StatelessWidget {
                     "Sign Up",
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
-                      fontSize: 15,
+                      fontSize: 15.sp,
                       color: Colors.red,
                     ),
                   ),
                 ],
               ),
-              GlobalButton(
-                marginTop: 35,
-                marginBottom: 12,
+              GlobalButtonAuth(
+                colorText: Colors.black,
+                marginTop: 35.h,
+                marginBottom: 12.h,
                 color: Colors.white,
-                title: Row(
-                  spacing: 6,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset("images/LoginImage/googleButton.png"),
-                    Text(
-                      "Continue With Google",
-                      style: TextStyle(fontSize: 15, fontWeight: FontWeight.w300),
-                    ),
-                  ],
-                ),
                 onTap: () {},
+                title: "Continue With Google",
+                imageIcon: "images/LoginImage/googleButton.png",
               ),
-              GlobalButton(
+              GlobalButtonAuth(
+                colorText: Colors.white,
                 marginTop: 0,
                 marginBottom: 0,
                 color: Colors.blue,
-                title: Row(
-                  spacing: 8,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset("images/LoginImage/googleButton.png"),
-                    Text(
-                      "Continue With Facebook",
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w300,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
-                ),
+                title: "Continue With Facebook",
                 onTap: () {},
+                imageIcon: "images/LoginImage/googleButton.png",
               ),
             ],
           ),
