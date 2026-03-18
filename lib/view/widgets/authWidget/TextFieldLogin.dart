@@ -2,10 +2,10 @@
 
 import 'package:flutter/material.dart';
 
-class TextFieldLogin extends StatelessWidget {
+class TextFieldAuth extends StatelessWidget {
   final Widget? hint;
   final Widget? suffixIcon;
-  const TextFieldLogin({ this.suffixIcon,required this.hint,super.key});
+  const TextFieldAuth({ this.suffixIcon,required this.hint,super.key});
 
   @override
   Widget build(BuildContext context) {

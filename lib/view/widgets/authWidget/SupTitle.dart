@@ -1,18 +1,21 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class LabelText extends StatelessWidget {
+class SupTitle extends StatelessWidget {
   final String? text;
-  const LabelText({required this.text, super.key});
+
+   const SupTitle({super.key,required this.text});
 
   @override
   Widget build(BuildContext context) {
     return Text(
       text!,
       style: TextStyle(
-        fontSize: 12.sp,
-        fontWeight: FontWeight.w300,
-        color: Colors.black87,
+        fontSize: 15.sp,
+        fontWeight: FontWeight.w400,
+        color: Colors.black54,
       ),
     );
   }
