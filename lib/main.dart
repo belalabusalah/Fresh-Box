@@ -33,9 +33,9 @@ class MyApp extends StatelessWidget {
         );
       },
       // child: SignUp(),
-      child: Login(),
+      // child: Login(),
       // child: CartScreen(),
-      // child: PopularFoodScreen(),
+      child: PopularFoodScreen(),
     );
   }
 }
