@@ -317,6 +317,7 @@ class CartScreen extends StatelessWidget {
               ],
             ),
             GlobalButton(
+              width: double.infinity,
               marginTop: 50.h,
               marginBottom: 30.h,
               color: Colors.redAccent,

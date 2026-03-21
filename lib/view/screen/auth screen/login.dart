@@ -71,6 +71,7 @@ class Login extends StatelessWidget {
                 ),
               ),
               GlobalButton(
+                width: double.infinity,
                 marginTop: 35,
                 marginBottom: 14,
                 title: "LogIn",

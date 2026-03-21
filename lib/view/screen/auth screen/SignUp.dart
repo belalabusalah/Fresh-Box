@@ -53,6 +53,7 @@ class SignUp extends StatelessWidget {
               hint: LabelText(text: " Create your password"),
             ),
             GlobalButton(
+              width: double.infinity,
               color: Colors.red,
               marginBottom: 20.h,
               marginTop: 30.h,

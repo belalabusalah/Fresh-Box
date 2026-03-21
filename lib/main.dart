@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fresh_box/view/screen/CartScreen.dart';
 import 'package:fresh_box/view/screen/PopularFoodScreen.dart';
 
+import 'view/screen/ProductDetailsScreen.dart';
 import 'view/screen/auth screen/SignUp.dart';
 import 'view/screen/auth screen/login.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(375, 812),
+      designSize: const Size(375, 948),
       minTextAdapt: true,
       splitScreenMode: true,
       // Use builder only if you need to use library outside ScreenUtilInit context
@@ -35,7 +36,8 @@ class MyApp extends StatelessWidget {
       // child: SignUp(),
       // child: Login(),
       // child: CartScreen(),
-      child: PopularFoodScreen(),
+      // child: PopularFoodScreen(),
+      child: ProductDetailsScreen(),
     );
   }
 }
