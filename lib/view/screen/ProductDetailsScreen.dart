@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fresh_box/view/widgets/detailsWidget/TextWidget.dart';
 import 'package:fresh_box/view/widgets/globalButton.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
@@ -44,8 +45,8 @@ class ProductDetailsScreen extends StatelessWidget {
             ),
 
             Text(
-              "Popular Food ",
-              style: TextStyle(fontSize: 24.sp, fontWeight: FontWeight.w500),
+              "Fresh Sandwich",
+              style: TextStyle(fontSize: 21.sp, fontWeight: FontWeight.w500),
             ),
             Container(
               decoration: BoxDecoration(
@@ -69,6 +70,7 @@ class ProductDetailsScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Container(
+          decoration: BoxDecoration(),
           child: ListView(
             children: [
               ClipRRect(
@@ -88,51 +90,44 @@ class ProductDetailsScreen extends StatelessWidget {
                   Container(
                     margin: EdgeInsets.only(top: 30.h),
                     width: 250.w,
-                    child: Text(
-                      maxLines: 3,
-                      "Authentic Japanese Fresh Sandwich",
-                      style: TextStyle(
-                        fontSize: 21.sp,
-                        fontWeight: FontWeight.w500,
-                        fontFamily: "Montserrat",
-                        color: Colors.black87,
-                      ),
+                    child: TextWidget(
+                      text: "Authentic Japanese Fresh Sandwich",
+                      fontSize: 21,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.black87,
+                      fontFamily: "Montserrat",
                     ),
                   ),
-                  Text(
-                    "\$12",
-                    style: TextStyle(
-                      fontSize: 27.sp,
-                      fontWeight: FontWeight.w500,
-                      fontFamily: "Montserrat",
-                      color: Colors.red,
-                    ),
+                  TextWidget(
+                    text: "\$12",
+                    fontSize: 27,
+                    color: Colors.red,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: "Montserrat",
                   ),
                 ],
               ),
               Container(
                 margin: EdgeInsets.only(top: 4, bottom: 4),
                 width: double.infinity,
-                child: Text(
-                  "Lorem ipsum et dolor sit amet, and consectetur eadipiscing elit. Ametmo magna the cursus yum dolor praesenta the  pulvinar tristique the food.",
-                  style: TextStyle(
-                    fontSize: 15.sp,
-                    fontWeight: FontWeight.w300,
-                    color: Colors.black38,
-                    fontFamily: "Montserrat",
-                  ),
-                ),
-              ),
-              Text(
-                "Reviews",
-                style: TextStyle(
-                  fontSize: 17.sp,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.black87,
+                child: TextWidget(
+                  text:
+                      "Lorem ipsum et dolor sit amet, and consectetur eadipiscing elit. Ametmo magna the cursus yum dolor praesenta the  pulvinar tristique the food.",
+                  fontSize: 15,
+                  fontWeight: FontWeight.w300,
+                  color: Colors.black38,
                   fontFamily: "Montserrat",
                 ),
               ),
+              TextWidget(
+                text: "Reviews",
+                fontSize: 17,
+                fontWeight: FontWeight.w500,
+                color: Colors.black87,
+                fontFamily: "Montserrat",
+              ),
               Container(
+                decoration: BoxDecoration(),
                 height: 50,
                 width: double.infinity,
                 child: ListView.builder(
@@ -151,15 +146,13 @@ class ProductDetailsScreen extends StatelessWidget {
               ),
 
               Container(
-                margin: EdgeInsets.only(top: 30.h, bottom: 10.h),
-                child: Text(
-                  "Add Instructions",
-                  style: TextStyle(
-                    fontSize: 17.sp,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.black87,
-                    fontFamily: "Montserrat",
-                  ),
+                margin: EdgeInsets.only(top: 30.h, bottom: 16.h),
+                child: TextWidget(
+                  text: "Add Instructions",
+                  fontSize: 17,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.black87,
+                  fontFamily: "Montserrat",
                 ),
               ),
               TextField(
@@ -167,14 +160,12 @@ class ProductDetailsScreen extends StatelessWidget {
                 decoration: InputDecoration(
                   fillColor: Colors.black12,
                   filled: true,
-                  hint: Text(
-                    "Write Instructions",
-                    style: TextStyle(
-                      fontSize: 17.sp,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.black38,
-                      fontFamily: "Montserrat",
-                    ),
+                  hint: TextWidget(
+                    text: "Write Instructions",
+                    fontSize: 17,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.black38,
+                    fontFamily: "Montserrat",
                   ),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10.r),
@@ -210,20 +201,17 @@ class ProductDetailsScreen extends StatelessWidget {
                         style: TextStyle(fontSize: 26, color: Colors.black),
                       ),
                     ),
-                    Text(
-                      "1",
-                      style: TextStyle(
-                        fontSize: 26.sp,
-                        color: Colors.black,
-                        fontFamily: "Montserrat",
-                        fontWeight: FontWeight.w500,
-
-                      ),
+                    TextWidget(
+                      text: "1",
+                      fontSize: 26,
+                      color: Colors.black,
+                      fontFamily: "Montserrat",
+                      fontWeight: FontWeight.w500,
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 16.w,right: 16),
+                      margin: EdgeInsets.only(left: 16.w, right: 16),
                       alignment: Alignment.center,
-                      height: 36.h,
+                      height: 46.h,
                       width: 36.w,
                       decoration: BoxDecoration(
                         color: Colors.black12,
