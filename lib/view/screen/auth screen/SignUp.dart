@@ -7,8 +7,8 @@ import 'package:fresh_box/view/widgets/authWidget/TextFieldLogin.dart';
 import 'package:fresh_box/view/widgets/authWidget/titleAuth.dart';
 import 'package:fresh_box/view/widgets/globalButton.dart';
 
-class SignUp extends StatelessWidget {
-  const SignUp({super.key});
+class SignUpScreen extends StatelessWidget {
+  const SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
