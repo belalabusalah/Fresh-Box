@@ -8,12 +8,12 @@ class ProductDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List reviewsImagePath = [
-      "images/ProductDetailsScreen/Reviews1",
-      "images/ProductDetailsScreen/Reviews2",
-      "images/ProductDetailsScreen/Reviews3",
-      "images/ProductDetailsScreen/Reviews4",
-      "images/ProductDetailsScreen/Reviews5",
+    final List<Map<String, dynamic>> reviewsImage = [
+      {"pathImage": "images/product_details_screen/reviews1.png"},
+      {"pathImage": "images/product_details_screen/reviews2.png"},
+      {"pathImage": "images/product_details_screen/reviews3.png"},
+      {"pathImage": "images/product_details_screen/reviews4.png"},
+      {"pathImage": "images/product_details_screen/reviews5.png"},
     ];
     return Scaffold(
       appBar: AppBar(
@@ -75,9 +75,8 @@ class ProductDetailsScreen extends StatelessWidget {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(12.r),
-
                 child: Image.asset(
-                  "images/ProductDetailsScreen/product details.png",
+                  "images/product_details_screen/product_details.png",
                   width: 325.w,
                   height: 177.h,
                   fit: BoxFit.fill,
@@ -121,25 +120,32 @@ class ProductDetailsScreen extends StatelessWidget {
               ),
               TextWidget(
                 text: "Reviews",
-                fontSize: 17,
+                fontSize: 17.sp,
                 fontWeight: FontWeight.w500,
                 color: Colors.black87,
                 fontFamily: "Montserrat",
               ),
               Container(
+                margin: EdgeInsets.only(top: 12.h),
                 decoration: BoxDecoration(),
-                height: 50,
+                height: 50.h,
                 width: double.infinity,
                 child: ListView.builder(
-                  itemCount: reviewsImagePath.length,
+                  itemCount: reviewsImage.length,
                   scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) => ClipRRect(
-                    borderRadius: BorderRadius.circular(12.r),
-                    child: Image.asset(
-                      reviewsImagePath[index],
-                      height: 49.h,
-                      width: 52.w,
-                      fit: BoxFit.fill,
+                  itemBuilder: (context, index) => Container(
+                    margin: EdgeInsets.only(right: 16.w),
+                    height: 55.h,
+                    width: 52.w,
+                    decoration: BoxDecoration(
+                      color: Colors.red,
+                      borderRadius: BorderRadius.circular(16.r),
+                      image: DecorationImage(
+                        fit: BoxFit.fill,
+                        image: AssetImage(
+                          "${reviewsImage[index]["pathImage"]}",
+                        ),
+                      ),
                     ),
                   ),
                 ),

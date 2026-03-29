@@ -83,7 +83,7 @@ class SignUpScreen extends StatelessWidget {
             ),
             GlobalButtonAuth(
               marginTop: 20.h,
-              imageIcon: "images/LoginImage/googleButton.png",
+              imageIcon: "images/login_image/google_button.png",
               marginBottom: 20.h,
               color: Colors.white,
               colorText: Colors.black,
@@ -92,7 +92,7 @@ class SignUpScreen extends StatelessWidget {
             ),
             GlobalButtonAuth(
               marginTop: 0.h,
-              imageIcon: "images/LoginImage/googleButton.png",
+              imageIcon: "images/login_image/vector.png",
               marginBottom: 20.h,
               color: Colors.blue,
               colorText: Colors.white,

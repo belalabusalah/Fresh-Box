@@ -106,7 +106,7 @@ class LoginScreen extends StatelessWidget {
                 color: Colors.white,
                 onTap: () {},
                 title: "Continue With Google",
-                imageIcon: "images/LoginImage/googleButton.png",
+                imageIcon: "images/login_image/google_button.png",
               ),
               GlobalButtonAuth(
                 colorText: Colors.white,
@@ -115,7 +115,7 @@ class LoginScreen extends StatelessWidget {
                 color: Colors.blue,
                 title: "Continue With Facebook",
                 onTap: () {},
-                imageIcon: "images/LoginImage/googleButton.png",
+                imageIcon: "images/login_image/vector.png",
               ),
             ],
           ),
