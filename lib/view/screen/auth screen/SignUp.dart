@@ -6,6 +6,7 @@ import 'package:fresh_box/view/widgets/authWidget/SupTitle.dart';
 import 'package:fresh_box/view/widgets/authWidget/TextFieldLogin.dart';
 import 'package:fresh_box/view/widgets/authWidget/titleAuth.dart';
 import 'package:fresh_box/view/widgets/globalButton.dart';
+import 'package:fresh_box/view/widgets/globalTitleFreshBox.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
@@ -13,25 +14,13 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white10,
-        // actionsPadding: EdgeInsetsGeometry.symmetric(horizontal: 8),
-        centerTitle: true,
-        title: Container(
-          child: Stack(
-            children: [
-              // Image.asset("images/LoginImage/FreshBOX.png"),
-              // Image.asset("images/LoginImage/BOX.png"),
-            ],
-          ),
-        ),
-      ),
 
       body: Padding(
         padding: const EdgeInsets.all(24.0),
-        child: ListView(
-          // crossAxisAlignment: CrossAxisAlignment.start,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            GlobalTitleFreshBox(),
             TitleAuth(text: "Let’s get Started"),
             SupTitle(text: "Create an account to continue!"),
             Container(
