@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fresh_box/view/widgets/CustomFullAppBar.dart';
 
 class PopularFoodScreen extends StatelessWidget {
   const PopularFoodScreen({super.key});
@@ -52,250 +53,225 @@ class PopularFoodScreen extends StatelessWidget {
       },
     ];
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white30,
-        // actionsPadding: EdgeInsetsGeometry.symmetric(horizontal: 8),
-        centerTitle: true,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20.r),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black12,
-                    offset: Offset(5, 5),
-                    blurRadius: 5,
-                  ),
-                ],
-              ),
-              width: 48.w,
-              height: 48.h,
-              child: Icon(
-                Icons.arrow_back_ios_new,
-                size: 30.r,
-                color: Colors.black45,
-              ),
-            ),
-
-            Text(
-              "Popular Food ",
-              style: TextStyle(fontSize: 24.sp, fontWeight: FontWeight.w500),
-            ),
-            Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20.r),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black12,
-                    offset: Offset(5, 5),
-                    blurRadius: 5,
-                  ),
-                ],
-              ),
-              width: 48.w,
-              height: 48.h,
-              child: Icon(Icons.search, size: 30.r, color: Colors.black45),
-            ),
-          ],
-        ),
-      ),
       body: Padding(
         padding: EdgeInsets.all(24.0.r),
-        child: ListView(
+        child: Column(
           children: [
-            GridView.builder(
-              shrinkWrap: true,
-              physics: ScrollPhysics(),
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                childAspectRatio: 0.68,
-                mainAxisSpacing: 22.h,
-                crossAxisSpacing: 22.w,
-              ),
-              itemCount: all.length,
-              itemBuilder: (context, index) {
-                return Container(
-                  width: 154.w,
-                  height: 271.h,
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    spacing: 8,
-                    children: [
-                      SizedBox(height: 16),
-                      Stack(
-                        children: [
-                          Container(
-                            width: 128.w,
-                            height: 148.h,
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                fit: BoxFit.fill,
-                                image: AssetImage(
-                                  "${all[index]["productImagePath"]}",
-                                ),
-                              ),
-                            ),
-                          ),
-                          all[index]["ImageDiscount"] == ""
-                              ? SizedBox()
-                              : Positioned(
-                                  top: 7.h,
-                                  left: 6.w,
-                                  child: Image.asset(
-                                    "${all[index]["ImageDiscount"]}",
-                                  ),
-                                ),
-                        ],
-                      ),
-                      Expanded(
-                        child: Container(
-                          decoration: BoxDecoration(),
-                          width: 94.w,
-                          child: Text(
-                            "${all[index]["productTitle"]}",
-                            style: TextStyle(
-                              fontWeight: FontWeight.w400,
-                              color: Colors.black,
-                            ),
-                            maxLines: 2,
-                          ),
-                        ),
-                      ),
-                      Row(
-                        spacing: 8.w,
-                        children: [
-                          Icon(Icons.timer, color: Colors.black38),
-                          Text("30", style: TextStyle(color: Colors.black38)),
-                          Text("Min", style: TextStyle(color: Colors.black38)),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            spacing: 8.w,
-                            children: [
-                              Icon(Icons.star, color: Colors.green),
-                              Text(
-                                "4.5",
-                                style: TextStyle(color: Colors.green),
-                              ),
-                            ],
-                          ),
-                          Icon(Icons.favorite, color: Colors.black38),
-                        ],
-                      ),
-                    ],
-                  ),
-                );
-              },
+            SizedBox(height: 32.h),
+            CustomFullAppBar(
+              onPressedLeading: () {},
+              text: "Popular Food",
+              icons: Icons.search,
+              spacing: 30,
+              onPressedAction: () {},
             ),
             Container(
-              margin: EdgeInsets.symmetric(vertical: 16),
-              child: ListTile(
-                title: Text(
-                  "Recommended",
-                  maxLines: 1,
-                  style: TextStyle(
-                    fontSize: 18.sp,
-                    fontWeight: FontWeight.w600,
-                    overflow: TextOverflow.fade,
-                  ),
-                ),
-                trailing: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.black,
-                  ),
-                  onPressed: () {},
-                  child: Text(
-                    "See All ",
-                    style: TextStyle(
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            ListView.builder(
-              shrinkWrap: true,
-              physics: ScrollPhysics(),
-              itemCount: allProduct2.length,
-              itemBuilder: (context, index) {
-                return Container(
-                  margin: EdgeInsets.only(bottom: 20.h),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12.r),
-                    color: allProduct2[index]["color"],
-                  ),
-                  width: 200.w,
-                  height: 160.h,
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Expanded(
-                        flex: 2,
-                        child: Image.asset(
-                          // fit: BoxFit.fill,
-                          height: 160.h,
-                          width: 150.w,
-                          "${allProduct2[index]["product2ImagePath"]}",
-                        ),
+              height: 800.h,
+              child: SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                child: Column(
+                  children: [
+                    GridView.builder(
+                      shrinkWrap: true,
+                      physics: ScrollPhysics(),
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        childAspectRatio: 0.68,
+                        mainAxisSpacing: 22.h,
+                        crossAxisSpacing: 22.w,
                       ),
-                      Expanded(
-                        flex: 3,
-                        child: Container(
-                          width: 240.w,
-                          padding: EdgeInsets.all(12.r),
-                          decoration: BoxDecoration(),
+                      itemCount: all.length,
+                      itemBuilder: (context, index) {
+                        return Container(
+                          width: 154.w,
+                          height: 271.h,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(8),
+                          ),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            // spacing: 8,
-                            mainAxisAlignment: MainAxisAlignment.center,
+                            spacing: 8,
                             children: [
-                              Text(
-                                "${allProduct2[index]["titleProducts2"]}",
-                                style: TextStyle(
-                                  fontSize: 16.sp,
-                                  fontWeight: FontWeight.w900,
+                              SizedBox(height: 16),
+                              Stack(
+                                children: [
+                                  Container(
+                                    width: 128.w,
+                                    height: 148.h,
+                                    decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                        fit: BoxFit.fill,
+                                        image: AssetImage(
+                                          "${all[index]["productImagePath"]}",
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  all[index]["ImageDiscount"] == ""
+                                      ? SizedBox()
+                                      : Positioned(
+                                          top: 7.h,
+                                          left: 6.w,
+                                          child: Image.asset(
+                                            "${all[index]["ImageDiscount"]}",
+                                          ),
+                                        ),
+                                ],
+                              ),
+                              Expanded(
+                                child: Container(
+                                  decoration: BoxDecoration(),
+                                  width: 94.w,
+                                  child: Text(
+                                    "${all[index]["productTitle"]}",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w400,
+                                      color: Colors.black,
+                                    ),
+                                    maxLines: 2,
+                                  ),
                                 ),
                               ),
-                              Text(
-                                "${allProduct2[index]["supTitleProducts2"]}",
-                                maxLines: 2,
-                                style: TextStyle(
-                                  fontSize: 14.sp,
-                                  fontWeight: FontWeight.bold,
-                                  overflow: TextOverflow.ellipsis,
+                              Row(
+                                spacing: 8.w,
+                                children: [
+                                  Icon(Icons.timer, color: Colors.black38),
+                                  Text(
+                                    "30",
+                                    style: TextStyle(color: Colors.black38),
+                                  ),
+                                  Text(
+                                    "Min",
+                                    style: TextStyle(color: Colors.black38),
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Row(
+                                    spacing: 8.w,
+                                    children: [
+                                      Icon(Icons.star, color: Colors.green),
+                                      Text(
+                                        "4.5",
+                                        style: TextStyle(color: Colors.green),
+                                      ),
+                                    ],
+                                  ),
+                                  Icon(Icons.favorite, color: Colors.black38),
+                                ],
+                              ),
+                            ],
+                          ),
+                        );
+                      },
+                    ),
+                    Container(
+                      margin: EdgeInsets.symmetric(vertical: 16),
+                      child: ListTile(
+                        title: Text(
+                          "Recommended",
+                          maxLines: 1,
+                          style: TextStyle(
+                            fontSize: 18.sp,
+                            fontWeight: FontWeight.w600,
+                            overflow: TextOverflow.fade,
+                          ),
+                        ),
+                        trailing: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.black,
+                          ),
+                          onPressed: () {},
+                          child: Text(
+                            "See All ",
+                            style: TextStyle(
+                              fontSize: 18.sp,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    ListView.builder(
+                      shrinkWrap: true,
+                      physics: ScrollPhysics(),
+                      itemCount: allProduct2.length,
+                      itemBuilder: (context, index) {
+                        return Container(
+                          margin: EdgeInsets.only(bottom: 20.h),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12.r),
+                            color: allProduct2[index]["color"],
+                          ),
+                          width: 200.w,
+                          height: 160.h,
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Expanded(
+                                flex: 2,
+                                child: Image.asset(
+                                  // fit: BoxFit.fill,
+                                  height: 160.h,
+                                  width: 150.w,
+                                  "${allProduct2[index]["product2ImagePath"]}",
                                 ),
                               ),
-                              Text(
-                                "${allProduct2[index]["priceProduct2"]}",
-                                style: TextStyle(
-                                  fontSize: 20.sp,
-                                  fontWeight: FontWeight.bold,
-                                  overflow: TextOverflow.ellipsis,
+                              Expanded(
+                                flex: 3,
+                                child: Container(
+                                  width: 240.w,
+                                  padding: EdgeInsets.all(12.r),
+                                  decoration: BoxDecoration(),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    // spacing: 8,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        "${allProduct2[index]["titleProducts2"]}",
+                                        style: TextStyle(
+                                          fontSize: 16.sp,
+                                          fontWeight: FontWeight.w900,
+                                        ),
+                                      ),
+                                      Text(
+                                        "${allProduct2[index]["supTitleProducts2"]}",
+                                        maxLines: 2,
+                                        style: TextStyle(
+                                          fontSize: 14.sp,
+                                          fontWeight: FontWeight.bold,
+                                          overflow: TextOverflow.ellipsis,
+                                        ),
+                                      ),
+                                      Text(
+                                        "${allProduct2[index]["priceProduct2"]}",
+                                        style: TextStyle(
+                                          fontSize: 20.sp,
+                                          fontWeight: FontWeight.bold,
+                                          overflow: TextOverflow.ellipsis,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ],
                           ),
-                        ),
-                      ),
-                    ],
-                  ),
-                );
-              },
+                        );
+                      },
+                    ),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
