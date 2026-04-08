@@ -14,7 +14,7 @@ class GlobalButton extends StatelessWidget {
     required this.marginTop,
     required this.width,
     required this.marginBottom,
-    required this.color,
+    this.color = Colors.red,
     required this.title,
     required this.onTap,
     super.key,
@@ -26,12 +26,12 @@ class GlobalButton extends StatelessWidget {
       onTap: onTap(),
       child: Container(
         alignment: Alignment.center,
-         margin: EdgeInsets.only(top: marginTop!, bottom: marginBottom!),
+         margin: EdgeInsets.only(top: marginTop!.h, bottom: marginBottom!.h),
         height: 50.h,
         width: width!.w,
         decoration: BoxDecoration(
           color: color,
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(8.r),
         ),
         child: Text(
           title,

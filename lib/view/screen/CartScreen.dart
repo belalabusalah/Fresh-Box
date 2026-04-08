@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fresh_box/controller/screensControllers/CartController.dart';
 import 'package:fresh_box/view/widgets/globalButton.dart';
+import 'package:get/get.dart';
 
 import '../widgets/CustomFullAppBar.dart';
 
 class CartScreen extends StatelessWidget {
-  const CartScreen({super.key});
+
+   // CartController cartController =Get.put(CartController());
 
   @override
   Widget build(BuildContext context) {
@@ -36,20 +39,21 @@ class CartScreen extends StatelessWidget {
       {"productTitle": "Discount", "priceProduct": "\$8"},
     ];
     return Scaffold(
-      body: Padding(
+      body:Padding(
         padding: const EdgeInsets.all(24.0),
         child: Column(
           children: [
-            SizedBox(height: 32.h),
+            SizedBox(height: 20.h),
             CustomFullAppBar(
               onPressedLeading: () {},
-              text: "Cart",
+              text: "titleCartScreen".tr,
               icons: Icons.search,
               spacing: 73,
               onPressedAction: () {},
             ),
             Container(
-              height: 800.h,
+              // margin: EdgeInsets.only(top: 20),
+              height: 780.h,
               child: SingleChildScrollView(
                 scrollDirection: Axis.vertical,
                 child: Column(
@@ -89,18 +93,21 @@ class CartScreen extends StatelessWidget {
                                   children: [
                                     Image.asset(
                                       "${productsCart[index]["productImagePath"]}",
-                                      width: 110,
-                                      height: 110,
+                                      width: 110.w,
+                                      height: 110.h,
                                     ),
-                                    productsCart[index]["ImageDiscount"] == ""
-                                        ? SizedBox()
-                                        : Positioned(
-                                            top: 13.h,
-                                            left: 13.w,
-                                            child: Image.asset(
-                                              "${productsCart[index]["ImageDiscount"]}",
-                                            ),
-                                          ),
+                                    Positioned(
+                                      right: 20,
+                                      child: productsCart[index]["ImageDiscount"] == ""
+                                          ? SizedBox()
+                                          : Positioned(
+                                        top: 13.h,
+                                        left: 13.w,
+                                        child: Image.asset(
+                                          "${productsCart[index]["ImageDiscount"]}",
+                                        ),
+                                      ),
+                                    ),
                                   ],
                                 ),
                               ),
@@ -113,7 +120,7 @@ class CartScreen extends StatelessWidget {
                                   decoration: BoxDecoration(),
                                   child: Column(
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                    CrossAxisAlignment.start,
                                     // spacing: 8,
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
@@ -136,7 +143,7 @@ class CartScreen extends StatelessWidget {
                                       ),
                                       Row(
                                         mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
+                                        MainAxisAlignment.spaceBetween,
                                         children: [
                                           Expanded(
                                             child: Row(
@@ -158,27 +165,31 @@ class CartScreen extends StatelessWidget {
                                           Expanded(
                                             child: Row(
                                               mainAxisAlignment:
-                                                  MainAxisAlignment.spaceEvenly,
+                                              MainAxisAlignment.spaceEvenly,
                                               children: [
                                                 Container(
-                                                  height: 32.h,
-                                                  width: 32.h,
-                                                  alignment: Alignment.center,
-                                                  decoration: BoxDecoration(
-                                                    color: Colors.black12,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                          6,
-                                                        ),
-                                                  ),
-                                                  child: Center(
-                                                    child: Icon(
-                                                      Icons.minimize_sharp,
-                                                    ),
-                                                  ),
-                                                ),
+                                                 height: 32.h,
+                                                 width: 32.h,
+                                                 alignment: Alignment.center,
+                                                 decoration: BoxDecoration(
+                                                   color: Colors.black12,
+                                                   borderRadius:
+                                                   BorderRadius.circular(
+                                                     6,
+                                                   ),
+                                                 ),
+                                                 child: Center(
+                                                   child: IconButton(
+                                                     icon: Icon(
+                                                       Icons.minimize_sharp,
+                                                     ),
+                                                     onPressed: (){},
+                                                   ),
+                                                 ),
+                                               ),
+
                                                 Text(
-                                                  "1",
+                                                  "0",
                                                   style: TextStyle(
                                                     fontSize: 24.sp,
                                                   ),
@@ -190,9 +201,9 @@ class CartScreen extends StatelessWidget {
                                                   decoration: BoxDecoration(
                                                     color: Colors.black12,
                                                     borderRadius:
-                                                        BorderRadius.circular(
-                                                          6,
-                                                        ),
+                                                    BorderRadius.circular(
+                                                      6,
+                                                    ),
                                                   ),
                                                   child: Center(
                                                     child: Icon(Icons.add),
@@ -214,7 +225,7 @@ class CartScreen extends StatelessWidget {
                     ),
                     SizedBox(height: 30.h),
                     Text(
-                      "Recepient Address",
+                      "recipientAddress".tr,
                       maxLines: 1,
                       style: TextStyle(
                         fontSize: 17.sp,
@@ -248,7 +259,7 @@ class CartScreen extends StatelessWidget {
                     ),
                     SizedBox(height: 30.h),
                     Text(
-                      "Order Review",
+                      "orderReview".tr,
                       maxLines: 1,
                       style: TextStyle(
                         fontSize: 17.sp,
@@ -293,7 +304,7 @@ class CartScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Total Price",
+                          "totalPrice".tr,
                           style: TextStyle(
                             fontSize: 20.sp,
                             fontWeight: FontWeight.w500,
@@ -318,7 +329,7 @@ class CartScreen extends StatelessWidget {
                       marginBottom: 30.h,
                       color: Colors.redAccent,
                       onTap: () {},
-                      title: "Process to Payment",
+                      title: "processPayment".tr,
                     ),
                   ],
                 ),

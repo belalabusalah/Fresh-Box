@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fresh_box/view/widgets/CustomFullAppBar.dart';
 import 'package:fresh_box/view/widgets/detailsWidget/TextWidget.dart';
 import 'package:fresh_box/view/widgets/globalButton.dart';
+import 'package:get/get.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
   const ProductDetailsScreen({super.key});
@@ -26,10 +27,10 @@ class ProductDetailsScreen extends StatelessWidget {
             SizedBox(height: 20.h),
             CustomFullAppBar(
               onPressedLeading: (){},
-              text: "Fresh Sandwich",
+              text: "titleDetails".tr,
               icons: Icons.more_vert,
               onPressedAction: (){},
-              spacing: 10,
+              spacing: 34,
             ),
             Container(
               height: 780.h,
@@ -56,7 +57,7 @@ class ProductDetailsScreen extends StatelessWidget {
                           margin: EdgeInsets.only(top: 30.h),
                           width: 250.w,
                           child: TextWidget(
-                            text: "Authentic Japanese Fresh Sandwich",
+                            text: "titleProduct".tr,
                             fontSize: 21,
                             fontWeight: FontWeight.w500,
                             color: Colors.black87,
@@ -85,7 +86,7 @@ class ProductDetailsScreen extends StatelessWidget {
                       ),
                     ),
                     TextWidget(
-                      text: "Reviews",
+                      text: "reviews".tr,
                       fontSize: 17.sp,
                       fontWeight: FontWeight.w500,
                       color: Colors.black87,
@@ -120,7 +121,7 @@ class ProductDetailsScreen extends StatelessWidget {
                     Container(
                       margin: EdgeInsets.only(top: 30.h, bottom: 16.h),
                       child: TextWidget(
-                        text: "Add Instructions",
+                        text: "instructions".tr,
                         fontSize: 17,
                         fontWeight: FontWeight.w500,
                         color: Colors.black87,
@@ -133,7 +134,7 @@ class ProductDetailsScreen extends StatelessWidget {
                         fillColor: Colors.black12,
                         filled: true,
                         hint: TextWidget(
-                          text: "Write Instructions",
+                          text: "writeInstructions".tr,
                           fontSize: 17,
                           fontWeight: FontWeight.w500,
                           color: Colors.black38,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fresh_box/view/widgets/CustomFullAppBar.dart';
+import 'package:get/get.dart';
 
 class PopularFoodScreen extends StatelessWidget {
   const PopularFoodScreen({super.key});
@@ -60,7 +61,7 @@ class PopularFoodScreen extends StatelessWidget {
             SizedBox(height: 32.h),
             CustomFullAppBar(
               onPressedLeading: () {},
-              text: "Popular Food",
+              text: "titlePopularFood".tr,
               icons: Icons.search,
               spacing: 30,
               onPressedAction: () {},
@@ -174,7 +175,7 @@ class PopularFoodScreen extends StatelessWidget {
                       margin: EdgeInsets.symmetric(vertical: 16),
                       child: ListTile(
                         title: Text(
-                          "Recommended",
+                          "recommended".tr,
                           maxLines: 1,
                           style: TextStyle(
                             fontSize: 18.sp,
@@ -188,7 +189,7 @@ class PopularFoodScreen extends StatelessWidget {
                           ),
                           onPressed: () {},
                           child: Text(
-                            "See All ",
+                            "seeAll".tr,
                             style: TextStyle(
                               fontSize: 18.sp,
                               fontWeight: FontWeight.w500,

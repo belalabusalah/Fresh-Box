@@ -1,22 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fresh_box/Localization/Local.dart';
+import 'package:fresh_box/Localization/Local_controller.dart';
 import 'package:fresh_box/view/screen/CartScreen.dart';
 import 'package:fresh_box/view/screen/PopularFoodScreen.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'view/screen/ProductDetailsScreen.dart';
 import 'view/screen/auth screen/SignUp.dart';
 import 'view/screen/auth screen/login.dart';
+import 'view/screen/onBoarding/onBoardingScreen.dart';
 
-void main() {
+ SharedPreferences? sharedprefe;
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  sharedprefe = await SharedPreferences.getInstance();
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
+    Get.put(MyLocalController());
     return ScreenUtilInit(
       designSize: const Size(375, 948),
       minTextAdapt: true,
@@ -31,13 +40,16 @@ class MyApp extends StatelessWidget {
             primarySwatch: Colors.blue,
             textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
           ),
-          initialRoute: "/productsScreen",
+          initialRoute: "/OnBoardingScreen",
+          locale: Get.deviceLocale,
+          translations: MyLocal(),
           getPages: [
             GetPage(name: "/popularFoodScreen",page: () => PopularFoodScreen(),),
             GetPage(name: "/productsScreen", page: () => ProductDetailsScreen(),),
             GetPage(name: "/cartScreen", page: () => CartScreen()),
             GetPage(name: "/loginScreen", page: () => LoginScreen()),
             GetPage(name: "/signUpScreen", page: () => SignUpScreen()),
+            GetPage(name: "/OnBoardingScreen", page: () => OnBoardingScreen()),
           ],
         );
       },
