@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fresh_box/Localization/Local_controller.dart';
 import 'package:fresh_box/view/widgets/CustomFullAppBar.dart';
 import 'package:get/get.dart';
 
@@ -8,6 +9,7 @@ class PopularFoodScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    MyLocalController controllerLang = Get.find();
     final List<Map<String, String>> all = [
       {
         "productImagePath": "images/popular_food_image/card1.png",
@@ -60,7 +62,9 @@ class PopularFoodScreen extends StatelessWidget {
           children: [
             SizedBox(height: 32.h),
             CustomFullAppBar(
-              onPressedLeading: () {},
+              onPressedLeading: () {
+               controllerLang.toggleLang();
+              },
               text: "titlePopularFood".tr,
               icons: Icons.search,
               spacing: 30,

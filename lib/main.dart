@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(MyLocalController());
+    MyLocalController controllerLang = Get.put(MyLocalController());
     return ScreenUtilInit(
       designSize: const Size(375, 948),
       minTextAdapt: true,
@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
             textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
           ),
           initialRoute: "/OnBoardingScreen",
-          locale: Get.deviceLocale,
+          locale: controllerLang.initialLang,
           translations: MyLocal(),
           getPages: [
             GetPage(name: "/popularFoodScreen",page: () => PopularFoodScreen(),),

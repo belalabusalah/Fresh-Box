@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fresh_box/view/widgets/detailsWidget/TextWidget.dart';
 import 'package:fresh_box/view/widgets/globalButton.dart';
 import 'package:fresh_box/view/widgets/globalTitleFreshBox.dart';
+import 'package:get/get.dart';
 
 
 class OnBoardingScreen extends StatefulWidget {
@@ -23,21 +24,21 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     final List<Map<String, String>> listOnBoarding = [
       {
         "urlImage": "images/onBoardingScreen/Onboarding_1.png",
-        "title": "Order Food Around You",
+        "title": "titlePage1".tr,
         "subtitle":
-            "When you oder, we’ll hook you up with exclusive coupon, specials and rewards",
+            "subtitlePage1".tr,
       },
       {
         "urlImage": "images/onBoardingScreen/Onboarding_2.png",
-        "title": "Receive the Great Food",
+        "title": "titlePage2".tr,
         "subtitle":
-            "You’ll receive the great food within a hour. And get free delivery credits for every order.",
+            "subtitlePage2".tr,
       },
       {
         "urlImage": "images/onBoardingScreen/Onboarding_3.png",
-        "title": "Hot Delivery to Home",
+        "title": "titlePage3".tr,
         "subtitle":
-            "We make food ordering fasr, simple and free-no matter if you order online or cash",
+            "subtitlePage3".tr,
       },
     ];
     return Scaffold(
@@ -107,7 +108,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   TextWidget(
-                    text: "Skip",
+                    text: "skip".tr,
                     fontSize: 17,
                     color: Color(0xFF121212),
                     fontWeight: FontWeight.w500,
@@ -117,7 +118,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       marginTop: 0,
                       width: 137,
                       marginBottom: 0,
-                      title: "Next",
+                      title: "next".tr,
                       color: Color(0xFF121212),
                       onTap: (){}),
                 ],)
@@ -125,9 +126,13 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   marginTop: 0,
                   width: 325,
                   marginBottom: 0,
-                  title: "Get Started",
+                  title: "getStarted".tr,
                   color: Color(0xFF121212),
-                  onTap: (){}),
+                  onTap: (){
+                    WidgetsBinding.instance.addPostFrameCallback((_) {
+                      Get.toNamed("/popularFoodScreen");
+                    });
+                  }),
               SizedBox(height: 45.h,),
 
 
