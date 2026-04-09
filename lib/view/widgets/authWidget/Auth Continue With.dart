@@ -30,14 +30,14 @@ class GlobalButtonAuth extends StatelessWidget {
       child: Container(
         alignment: Alignment.center,
         margin: EdgeInsets.only(top: marginTop!, bottom: marginBottom!),
-        height: 50,
+        height: 50.h,
         width: double.infinity,
         decoration: BoxDecoration(
           color: color,
           borderRadius: BorderRadius.circular(8),
         ),
         child:Row(
-          spacing: 6,
+          spacing: 6.w,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(imageIcon),

@@ -6,32 +6,21 @@ import 'package:fresh_box/view/widgets/authWidget/SupTitle.dart';
 import 'package:fresh_box/view/widgets/authWidget/TextFieldLogin.dart';
 import 'package:fresh_box/view/widgets/authWidget/titleAuth.dart';
 import 'package:fresh_box/view/widgets/globalButton.dart';
+import 'package:fresh_box/view/widgets/globalTitleFreshBox.dart';
 
-class SignUp extends StatelessWidget {
-  const SignUp({super.key});
+class SignUpScreen extends StatelessWidget {
+  const SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white10,
-        // actionsPadding: EdgeInsetsGeometry.symmetric(horizontal: 8),
-        centerTitle: true,
-        title: Container(
-          child: Stack(
-            children: [
-              // Image.asset("images/LoginImage/FreshBOX.png"),
-              // Image.asset("images/LoginImage/BOX.png"),
-            ],
-          ),
-        ),
-      ),
 
       body: Padding(
         padding: const EdgeInsets.all(24.0),
-        child: ListView(
-          // crossAxisAlignment: CrossAxisAlignment.start,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            GlobalTitleFreshBox(),
             TitleAuth(text: "Let’s get Started"),
             SupTitle(text: "Create an account to continue!"),
             Container(
@@ -53,6 +42,7 @@ class SignUp extends StatelessWidget {
               hint: LabelText(text: " Create your password"),
             ),
             GlobalButton(
+              width: double.infinity,
               color: Colors.red,
               marginBottom: 20.h,
               marginTop: 30.h,
@@ -82,7 +72,7 @@ class SignUp extends StatelessWidget {
             ),
             GlobalButtonAuth(
               marginTop: 20.h,
-              imageIcon: "images/LoginImage/googleButton.png",
+              imageIcon: "images/login_image/google_button.png",
               marginBottom: 20.h,
               color: Colors.white,
               colorText: Colors.black,
@@ -91,7 +81,7 @@ class SignUp extends StatelessWidget {
             ),
             GlobalButtonAuth(
               marginTop: 0.h,
-              imageIcon: "images/LoginImage/googleButton.png",
+              imageIcon: "images/login_image/vector.png",
               marginBottom: 20.h,
               color: Colors.blue,
               colorText: Colors.white,

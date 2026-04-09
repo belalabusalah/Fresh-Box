@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fresh_box/view/widgets/authWidget/Auth%20Continue%20With.dart';
@@ -6,36 +7,25 @@ import 'package:fresh_box/view/widgets/authWidget/SupTitle.dart';
 import 'package:fresh_box/view/widgets/authWidget/TextFieldLogin.dart';
 import 'package:fresh_box/view/widgets/authWidget/titleAuth.dart';
 import 'package:fresh_box/view/widgets/globalButton.dart';
+import 'package:fresh_box/view/widgets/globalTitleFreshBox.dart';
 
-class Login extends StatelessWidget {
-  const Login({super.key});
+class LoginScreen extends StatelessWidget {
+  const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white10,
-        // actionsPadding: EdgeInsetsGeometry.symmetric(horizontal: 8),
-        centerTitle: true,
-        title: Container(
-          child: Stack(
-            children: [
-              // Image.asset("images/LoginImage/FreshBOX.png"),
-              // Image.asset("images/LoginImage/BOX.png"),
-            ],
-          ),
-        ),
-      ),
       body: Padding(
         padding: EdgeInsets.all(25),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              GlobalTitleFreshBox(),
               TitleAuth(text: "Let’s Sign You In"),
               SupTitle(text: "Welcome back, you’ve been missed!"),
               Container(
-                padding: EdgeInsets.only(top: 24, bottom: 12),
+                padding: EdgeInsets.only(top: 24.h, bottom: 12.h),
                 child: LabelText(text: "Username or E-mail"),
               ),
               TextFieldAuth(
@@ -71,6 +61,7 @@ class Login extends StatelessWidget {
                 ),
               ),
               GlobalButton(
+                width: double.infinity,
                 marginTop: 35,
                 marginBottom: 14,
                 title: "LogIn",
@@ -105,7 +96,7 @@ class Login extends StatelessWidget {
                 color: Colors.white,
                 onTap: () {},
                 title: "Continue With Google",
-                imageIcon: "images/LoginImage/googleButton.png",
+                imageIcon: "images/login_image/google_button.png",
               ),
               GlobalButtonAuth(
                 colorText: Colors.white,
@@ -114,7 +105,7 @@ class Login extends StatelessWidget {
                 color: Colors.blue,
                 title: "Continue With Facebook",
                 onTap: () {},
-                imageIcon: "images/LoginImage/googleButton.png",
+                imageIcon: "images/login_image/vector.png",
               ),
             ],
           ),
