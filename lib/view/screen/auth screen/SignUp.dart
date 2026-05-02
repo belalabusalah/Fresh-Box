@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fresh_box/view/widgets/authWidget/Auth%20Continue%20With.dart';
+import 'package:fresh_box/view/widgets/authWidget/GlobalButtonAuth.dart';
 import 'package:fresh_box/view/widgets/authWidget/LabelText.dart';
 import 'package:fresh_box/view/widgets/authWidget/SupTitle.dart';
 import 'package:fresh_box/view/widgets/authWidget/TextFieldLogin.dart';

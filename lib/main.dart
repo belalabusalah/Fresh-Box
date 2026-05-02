@@ -10,6 +10,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'view/screen/ProductDetailsScreen.dart';
 import 'view/screen/auth screen/SignUp.dart';
 import 'view/screen/auth screen/login.dart';
+import 'view/screen/homeScreen.dart';
 import 'view/screen/onBoarding/onBoardingScreen.dart';
 
  SharedPreferences? sharedprefe;
@@ -40,7 +41,7 @@ class MyApp extends StatelessWidget {
             primarySwatch: Colors.blue,
             textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
           ),
-          initialRoute: "/OnBoardingScreen",
+          initialRoute: "/homeScreen",
           locale: controllerLang.initialLang,
           translations: MyLocal(),
           getPages: [
@@ -49,7 +50,8 @@ class MyApp extends StatelessWidget {
             GetPage(name: "/cartScreen", page: () => CartScreen()),
             GetPage(name: "/loginScreen", page: () => LoginScreen()),
             GetPage(name: "/signUpScreen", page: () => SignUpScreen()),
-            GetPage(name: "/OnBoardingScreen", page: () => OnBoardingScreen()),
+            GetPage(name: "/OnBoardingScreen", page: () => OnBoardingScreen(),),
+            GetPage(name: "/homeScreen", page: () => HomeScreen(),),
           ],
         );
       },

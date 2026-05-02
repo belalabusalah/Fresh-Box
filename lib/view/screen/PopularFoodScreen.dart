@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fresh_box/Localization/Local_controller.dart';
 import 'package:fresh_box/view/widgets/CustomFullAppBar.dart';
+import 'package:fresh_box/view/widgets/custom_all_button.dart';
 import 'package:get/get.dart';
 
 class PopularFoodScreen extends StatelessWidget {
@@ -175,34 +176,9 @@ class PopularFoodScreen extends StatelessWidget {
                         );
                       },
                     ),
-                    Container(
-                      margin: EdgeInsets.symmetric(vertical: 16),
-                      child: ListTile(
-                        title: Text(
-                          "recommended".tr,
-                          maxLines: 1,
-                          style: TextStyle(
-                            fontSize: 18.sp,
-                            fontWeight: FontWeight.w600,
-                            overflow: TextOverflow.fade,
-                          ),
-                        ),
-                        trailing: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.black,
-                          ),
-                          onPressed: () {},
-                          child: Text(
-                            "seeAll".tr,
-                            style: TextStyle(
-                              fontSize: 18.sp,
-                              fontWeight: FontWeight.w500,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
+                    CustomAllButton(title: 'Recommended ',
+                      buttonText: 'See All',
+                      onPressed: () {  },),
                     ListView.builder(
                       shrinkWrap: true,
                       physics: ScrollPhysics(),

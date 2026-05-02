@@ -130,7 +130,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   color: Color(0xFF121212),
                   onTap: (){
                     WidgetsBinding.instance.addPostFrameCallback((_) {
-                      Get.toNamed("/popularFoodScreen");
+                      Get.toNamed("/homeScreen");
                     });
                   }),
               SizedBox(height: 45.h,),
